@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 namespace Aquarium
 {
     internal class Species : Fish
-    {   
+    {
+        List<Species.FishSpecies> fishList = new List<Species.FishSpecies>();
+        List<FishSpecies> inTank = new List<FishSpecies>();
         public enum FishSpecies
         {
             Clownfish,
@@ -29,5 +31,31 @@ namespace Aquarium
             ZebraFish,
 
         }
+
+
+        public void PrintAvailableFish() //Printing all the avalible fish
+        {
+
+        }
+
+        public void PutFishInTank() //The Chosen fish get's put in the tank list
+        {
+
+        }
+
+        public void FishInTank() //To show the fish in the tank
+        {
+            foreach (var fishSpecies in inTank)
+            {
+                
+            }
+            
+        }
+
+        public void GetRandomFish()
+        {
+            //Method for getting a random fish from the avalible fish list
+        }
+
     }
 }
