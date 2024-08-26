@@ -8,9 +8,10 @@ namespace Aquarium
 {
     internal class Species : Fish
     {
-        public Species(string aName, string aDescription) : base (aName, aDescription) { }
+        public Species(string aName, string aDescription) : base (aName, aDescription) { FishList = new List<Species>(); }
+        public List<Species>FishList { get; private set; }
 
-        public List<Species> fishList { get; private set; }
+        
         
         public enum FishSpecies
         {
@@ -34,38 +35,40 @@ namespace Aquarium
 
         }
 
-        public List<Species> AllFish()
+        public List<Species> GetAllFish()
         {
-            fishList = new List<Species>()
-            {
-                new Species("Clownfish", "What a clown, give him a red nose!"),
-                new Species("Pufferfish", "He's a bit scared, don't eat him!"),
-                new Species("Royal Gramma", "We have some royalty in here"),
-                new Species("Bangai Cardinal", "Such a pretty little priest"), 
-                new Species("Chalk Bass", "He is starting a band"),
-                new Species("Coris Wrasse", "He's a bit of a weird copycat"),
-                new Species("Angel Fish", "A little angel, can do nothing wrong"),
-                new Species("Damsel Fish", "Will anyone save her?"),
-                new Species("Watchman Goby", "Do you feel watched?"),
-                new Species("Yellow Tang", "So bright, so tangy"),
-                new Species("Firefish Goby", "Where the heck is the fire?"),
-                new Species("Guppy", "Kinda just guppying around"),
-                new Species("Swordtail", "Engarde, don't bring a knife to a swordfight"),
-                new Species("Neon Tetra", "Neon lightshow, dancing around"),
-                new Species("Gold Fish", "A golden child, he'll throw a tantrum!"),
-                new Species("Rainbow Shark", "Into his mouth and then all across the rainbow bridge"),
-                new Species("Zebra Fish", "Zebra in water? am I losing my mind?"),
-            };
-            return fishList;
+            FishList.Add(new Species("Clownfish", "What a clown, give him a red nose!"));
+            FishList.Add(new Species("Pufferfish", "He's a bit scared, don't eat him!"));
+            FishList.Add(new Species("Royal Gramma", "We have some royalty in here"));
+            FishList.Add(new Species("Bangai Cardinal", "Such a pretty little priest"));
+            FishList.Add(new Species("Chalk Bass", "He is starting a band"));
+            FishList.Add(new Species("Coris Wrasse", "He's a bit of a weird copycat"));
+            FishList.Add(new Species("Angel Fish", "A little angel, can do nothing wrong"));
+            FishList.Add(new Species("Damsel Fish", "Will anyone save her?"));
+            FishList.Add(new Species("Watchman Goby", "Do you feel watched?"));
+            FishList.Add(new Species("Yellow Tang", "So bright, so tangy"));
+            FishList.Add(new Species("Firefish Goby", "Where the heck is the fire?"));
+            FishList.Add(new Species("Guppy", "Kinda just guppying around"));
+            FishList.Add(new Species("Swordtail", "Engarde, don't bring a knife to a swordfight"));
+            FishList.Add(new Species("Neon Tetra", "Neon lightshow, dancing around"));
+            FishList.Add(new Species("Gold Fish", "A golden child, he'll throw a tantrum!"));
+            FishList.Add(new Species("Rainbow Shark", "Into his mouth and then all across the rainbow bridge"));
+            FishList.Add(new Species("Zebra Fish", "Zebra in water? am I losing my mind?"));
+            
+
+            return FishList;
         }
 
         public void PrintAvailableFish(List<Species>fishList) //Printing all the available fish
         {
+            Console.Clear();
             foreach (var _species in fishList)
             {
                 Console.WriteLine(_species.Name);
-                Console.WriteLine(_species.Description);
+                Console.WriteLine("\t"+_species.Description);
             }
+
+            var Addfish = Console.ReadLine();
         }
 
 

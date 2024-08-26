@@ -11,12 +11,15 @@ namespace Aquarium
 {
     internal class Aquarium
     {
-        Species species;
-        List<FishSpecies> inTank = new List<FishSpecies>();
-        public Aquarium tank;
+        
+        List<Species> inTank = new List<Species>();
+        Species species = new Species("temp", "temp Description");
 
         public void YourAquarium() //This will print your current tank
         {
+            //var species = new Species("temp", "temp Description");
+            //var AllFish = species.GetAllFish();
+
             while (true)
             {
                 Console.WriteLine("here is your tank!");
@@ -66,7 +69,7 @@ namespace Aquarium
             Console.WriteLine("You can choose what fish you want to add to your tank here, just write the name of the fish you'd like to add!");
             Console.WriteLine("\n\t here are your options for fish!");
             Console.WriteLine("\n");
-            species.PrintAvailableFish(species.fishList);
+            species.PrintAvailableFish(species.GetAllFish());
         }
 
         public void GetaRandomFish() //You get a given random fish that you can choose to add to your tank or not.
@@ -83,6 +86,8 @@ namespace Aquarium
             }
         }
 
-
+      
+         
+        
     }
 }
