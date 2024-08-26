@@ -52,14 +52,14 @@ namespace Aquarium
                 new Species("Guppy", "Kinda just guppying around"),
                 new Species("Swordtail", "Engarde, don't bring a knife to a swordfight"),
                 new Species("Neon Tetra", "Neon lightshow, dancing around"),
-                new Species("Golf Fish", "A golden child, he'll throw a tantrum!"),
+                new Species("Gold Fish", "A golden child, he'll throw a tantrum!"),
                 new Species("Rainbow Shark", "Into his mouth and then all across the rainbow bridge"),
                 new Species("Zebra Fish", "Zebra in water? am I losing my mind?"),
             };
             return fishList;
         }
 
-        public void PrintAvailableFish() //Printing all the available fish
+        public void PrintAvailableFish(List<Species>fishList) //Printing all the available fish
         {
             foreach (var _species in fishList)
             {
