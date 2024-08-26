@@ -10,19 +10,29 @@ namespace Aquarium
 {
     abstract class Fish
     {
+
+        private string _name;
+
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+
+        private string _description;
+
+        public string Description
+        {
+            get { return _description; }
+            set { _description = value; }
+        }
+
+        public Fish(string aName, string aDescription)
+        {
+            _name = aName;
+            _description = aDescription;
+        }
+
         
-        public string Name { get; protected set; }
-        public string Description { get; protected set; }
-
-        public Fish(string name, string description)
-        {
-            Name = name;
-            Description = description;
-        }
-
-        public Fish()
-        {
-            
-        }
     }
 }

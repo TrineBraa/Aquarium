@@ -8,14 +8,16 @@ namespace Aquarium
 {
     internal class Species : Fish
     {
-        List<Species.FishSpecies> fishList = new List<Species.FishSpecies>();
-        List<FishSpecies> inTank = new List<FishSpecies>();
+        public Species(string aName, string aDescription) : base (aName, aDescription) { }
+
+        public List<Species> fishList { get; private set; }
+        
         public enum FishSpecies
         {
             Clownfish,
             Pufferfish,
             RoyalGramma,
-            BangaiiCardinal,
+            BangaiCardinal,
             ChalkBass,
             CorisWrasse,
             Angelfish,
@@ -25,37 +27,55 @@ namespace Aquarium
             FirefishGoby,
             Guppy,
             Swordtail,
-            NeonTetra, 
+            NeonTetra,
             GoldFish,
             RainbowShark,
             ZebraFish,
 
         }
 
-
-        public void PrintAvailableFish() //Printing all the avalible fish
+        public List<Species> AllFish()
         {
-
-        }
-
-        public void PutFishInTank() //The Chosen fish get's put in the tank list
-        {
-
-        }
-
-        public void FishInTank() //To show the fish in the tank
-        {
-            foreach (var fishSpecies in inTank)
+            fishList = new List<Species>()
             {
-                
-            }
-            
+                new Species("Clownfish", "What a clown, give him a red nose!"),
+                new Species("Pufferfish", "He's a bit scared, don't eat him!"),
+                new Species("Royal Gramma", "We have some royalty in here"),
+                new Species("Bangai Cardinal", "Such a pretty little priest"), 
+                new Species("Chalk Bass", "He is starting a band"),
+                new Species("Coris Wrasse", "He's a bit of a weird copycat"),
+                new Species("Angel Fish", "A little angel, can do nothing wrong"),
+                new Species("Damsel Fish", "Will anyone save her?"),
+                new Species("Watchman Goby", "Do you feel watched?"),
+                new Species("Yellow Tang", "So bright, so tangy"),
+                new Species("Firefish Goby", "Where the heck is the fire?"),
+                new Species("Guppy", "Kinda just guppying around"),
+                new Species("Swordtail", "Engarde, don't bring a knife to a swordfight"),
+                new Species("Neon Tetra", "Neon lightshow, dancing around"),
+                new Species("Golf Fish", "A golden child, he'll throw a tantrum!"),
+                new Species("Rainbow Shark", "Into his mouth and then all across the rainbow bridge"),
+                new Species("Zebra Fish", "Zebra in water? am I losing my mind?"),
+            };
+            return fishList;
         }
 
-        public void GetRandomFish()
+        public void PrintAvailableFish() //Printing all the available fish
         {
-            //Method for getting a random fish from the avalible fish list
+            foreach (var _species in fishList)
+            {
+                Console.WriteLine(_species.Name);
+                Console.WriteLine(_species.Description);
+            }
         }
+
+
+         public void GetRandomFish() //Method for getting a random fish from the available fish list
+         {
+            
+         }
+
+
 
     }
-}
+};
+
