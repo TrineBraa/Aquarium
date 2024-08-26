@@ -9,7 +9,7 @@ namespace Aquarium
     internal class Species : Fish
     {
         public Species(string aName, string aDescription) : base (aName, aDescription) { FishList = new List<Species>(); }
-        public List<Species>FishList { get; private set; }
+        public List<Species> FishList { get; private set; }
 
         
         
@@ -55,7 +55,6 @@ namespace Aquarium
             FishList.Add(new Species("Rainbow Shark", "Into his mouth and then all across the rainbow bridge"));
             FishList.Add(new Species("Zebra Fish", "Zebra in water? am I losing my mind?"));
             
-
             return FishList;
         }
 
@@ -64,17 +63,20 @@ namespace Aquarium
             Console.Clear();
             foreach (var _species in fishList)
             {
-                Console.WriteLine(_species.Name);
+                Console.WriteLine("\n"+_species.Name);
                 Console.WriteLine("\t"+_species.Description);
             }
 
+            Console.WriteLine("\nwrite the name of the fish you'd like to add to your tank! or exit to go back to the previous menu.");
             var Addfish = Console.ReadLine();
+            
+
         }
 
 
          public void GetRandomFish() //Method for getting a random fish from the available fish list
          {
-            
+             
          }
 
 
