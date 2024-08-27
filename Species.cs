@@ -8,9 +8,13 @@ namespace Aquarium
 {
     internal class Species : Fish
     {
-        public Species(string aName, string aDescription) : base (aName, aDescription) { FishList = new List<Species>(); }
+        public Species(string aName, string aDescription) : base (aName, aDescription)
+        {
+            FishList = new List<Species>();  
+            GetAllFish(); ;
+        }
         public List<Species> FishList { get; private set; }
-
+       
         
         
         public enum FishSpecies
@@ -74,11 +78,14 @@ namespace Aquarium
         }
 
 
-         public void GetRandomFish() //Method for getting a random fish from the available fish list
+         public Species GetRandomFish() //Method for getting a random fish from the available fish list
          {
-             
+             Random random = new Random();
+             int randomFish = random.Next(FishList.Count) ;
+             return FishList[randomFish];
          }
 
+         
 
 
     }

@@ -2,6 +2,7 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using static Aquarium.Species;
@@ -26,7 +27,7 @@ namespace Aquarium
                 Console.WriteLine();
                 if (inTank.Count > 0)
                 {
-                    FishInTank();
+                    FishInTank(inTank);
                 }
                 else if (inTank.Count == 0)
                 {
@@ -71,7 +72,7 @@ namespace Aquarium
             Console.WriteLine("You can choose what fish you want to add to your tank here, just write the name of the fish you'd like to add!");
             Console.WriteLine("\n\t here are your options for fish!");
             Console.WriteLine("\n");
-            species.PrintAvailableFish(species.GetAllFish());
+            species.PrintAvailableFish(species.FishList);
             Console.WriteLine();
             Console.WriteLine("Write the name of the fish you want to add, exit to return to previous menu.");
             var AddFish= Console.ReadLine().ToLower();
@@ -80,10 +81,29 @@ namespace Aquarium
         public void RandomFishInTank() //You get a given random fish that you can choose to add to your tank or not.
         {
             Console.Clear();
+            Species randomFish = species.GetRandomFish();
             Console.WriteLine("Here a Random fish will appear! you want to add it to your tank or let it go?");
+            Console.WriteLine();
+            Console.WriteLine(randomFish.Name + "appears!");
             Console.WriteLine();
             Console.WriteLine("Add it to tank? (Y/N), exit to return to previous menu.");
             var RandomFish = Console.ReadLine().ToLower();
+            if (RandomFish == "y")
+            {
+
+            }
+            else if (RandomFish == "n")
+            {
+
+            }
+            else if (RandomFish == "exit")
+            {
+                return;
+            }
+            else
+            {
+                Console.WriteLine("please input either y/n or exit!");
+            }
         }
 
         public void EmptyTank() //Method to empty the tank and start again
@@ -104,6 +124,7 @@ namespace Aquarium
         }
 
       
+
          
         
     }
