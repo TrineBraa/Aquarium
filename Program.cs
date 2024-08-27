@@ -5,14 +5,13 @@
 using Aquarium;
 
 
-Welcome();
+Main();
 
 
- void Welcome()
+ void Main()
  {
     while (true)
     {
-        
         Aquarium.Aquarium aqauarium = new Aquarium.Aquarium();
         Console.Title = "Aquarium Builder";
         Console.ForegroundColor = ConsoleColor.Cyan;

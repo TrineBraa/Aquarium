@@ -32,7 +32,7 @@ namespace Aquarium
                 }
                 else if (inTank.Count == 0)
                 {
-                    Console.WriteLine("\nYou currently have no fish in your tank, Add some!");
+                    Console.WriteLine("\tYou currently have no fish in your tank, Add some!");
                 }
 
                 AquariumMenu();

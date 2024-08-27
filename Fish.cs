@@ -33,6 +33,10 @@ namespace Aquarium
             _description = aDescription;
         }
 
+        public Fish()
+        {
+
+        }
         
     }
 }
