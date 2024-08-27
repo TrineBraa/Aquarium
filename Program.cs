@@ -2,6 +2,9 @@
  Hver "art" av fisk skal arve fra en felles klasse Fisk. Interface, Arv og Enum. INNKAPSLING*/
 
 
+using Aquarium;
+
+
 Welcome();
 
 
@@ -9,6 +12,7 @@ Welcome();
  {
     while (true)
     {
+        
         Aquarium.Aquarium aqauarium = new Aquarium.Aquarium();
         Console.Title = "Aquarium Builder";
         Console.ForegroundColor = ConsoleColor.Cyan;
@@ -27,7 +31,7 @@ Welcome();
         else if (StartupResponse == "n")
         {
             Console.WriteLine("shutting down");
-            Environment.Exit(404);
+            Environment.Exit(0);
         }
         else
         {

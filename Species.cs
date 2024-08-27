@@ -11,7 +11,6 @@ namespace Aquarium
         public Species(string aName, string aDescription) : base (aName, aDescription)
         {
             FishList = new List<Species>();  
-            GetAllFish(); ;
         }
         public List<Species> FishList { get; private set; }
        
